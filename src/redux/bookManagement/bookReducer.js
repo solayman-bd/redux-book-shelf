@@ -14,7 +14,7 @@ const bookReducer = (state = initialState, action) => {
     case ADD_TO_READING_LIST:
       return {
         ...state,
-        readingList: [...state.readingList, action.type],
+        readingList: [...state.readingList, action.payload],
       };
     case REMOVE_FROM_READING_LIST:
       return {
