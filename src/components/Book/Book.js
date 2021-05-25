@@ -5,13 +5,17 @@ import {
   // HiCheckCircle
 } from "react-icons/hi";
 import { useDispatch } from "react-redux";
-import { addToReadingList } from "../../redux/bookManagement/bookAction";
+import {
+  addToReadingList,
+  removeFromReadingList,
+} from "../../redux/bookManagement/bookAction";
 
 import styles from "./book.module.css";
 const SingleBook = (props) => {
   const shouldPlusSignShown = props.indicator;
   const dispatch = useDispatch();
   const { title, author, coverImageUrl, synopsis } = props.book;
+
   return (
     <div className="card d-flex mb-3 p-3" style={{ position: "relative" }}>
       <div className="row">
@@ -38,6 +42,7 @@ const SingleBook = (props) => {
           <HiMinusCircle
             title="Remove from list"
             className={styles.minus_icon}
+            onClick={() => dispatch(removeFromReadingList(props.book))}
           />
         )}
 

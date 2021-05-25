@@ -10,10 +10,10 @@ export const addToReadingList = (book) => {
     payload: book,
   };
 };
-export const removeFromReadingList = (id) => {
+export const removeFromReadingList = (book) => {
   return {
     type: REMOVE_FROM_READING_LIST,
-    payload: id,
+    payload: book,
   };
 };
 export const addToFinishedList = (id) => {

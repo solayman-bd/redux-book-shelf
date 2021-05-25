@@ -10,7 +10,14 @@ const ReadingList = () => {
   return (
     <PageLayout>
       {readingListBooks.length > 0 ? (
-        readingListBooks.map((book) => <Book key={book.id} book={book} />)
+        readingListBooks.map((book) => (
+          <Book
+            key={book.id}
+            book={book}
+            indicator={false}
+            // handleRemoveBook={handleRemoveBook}
+          />
+        ))
       ) : (
         <p>
           Looks like you've finished all your books! Check them out in your{" "}
