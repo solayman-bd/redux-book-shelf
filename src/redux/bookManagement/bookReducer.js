@@ -11,19 +11,6 @@ const initialState = {
 };
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
-    // case ADD_TO_READING_LIST:
-    //   return {
-    //     ...state,
-    //     readingList: [...state.readingList, action.payload],
-    //   };
-    // case ADD_TO_READING_LIST: {
-    //   const newState = { ...state };
-    //   if (newState.readingList.indexOf(action.payload) < 0) {
-    //     newState.readingList.push(action.payload);
-    //   }
-
-    //   return newState;
-    // }
     case ADD_TO_READING_LIST:
       return {
         ...state,
@@ -41,7 +28,10 @@ const bookReducer = (state = initialState, action) => {
       };
 
     case ADD_TO_FINISHED_LIST:
-      return state;
+      return {
+        ...state,
+        finishedList: [...state.finishedList, action.payload],
+      };
     default:
       return state;
   }

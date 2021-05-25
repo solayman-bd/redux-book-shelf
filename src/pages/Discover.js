@@ -9,7 +9,7 @@ const Discover = () => {
   return (
     <PageLayout>
       {books?.map((book) => (
-        <Book indicator={true} key={book.id} book={book} />
+        <Book indicator={"1"} key={book.id} book={book} />
       ))}
     </PageLayout>
   );

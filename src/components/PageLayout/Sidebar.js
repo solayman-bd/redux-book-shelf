@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const readingListBooks = useSelector((state) => state.books.readingList);
+  const finishedBooksList = useSelector((state) => state.books.finishedList);
   return (
     <div className="col-md-3">
       <ul className="list-group sticky-top  py-2">
@@ -17,7 +18,10 @@ const Sidebar = () => {
           </span>
         </NavLink>
         <NavLink as="li" className="list-group-item" to="/finish">
-          Finished Books <span className="badge badge-sm bg-primary">0</span>
+          Finished Books{" "}
+          <span className="badge badge-sm bg-primary">
+            {finishedBooksList.length}
+          </span>
         </NavLink>
       </ul>
     </div>
